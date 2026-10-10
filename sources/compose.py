@@ -9,7 +9,7 @@ FONT = '/System/Library/Fonts/Supplemental/Arial Bold.ttf'
 def font(n):
     try: return ImageFont.truetype(FONT,n)
     except OSError: return ImageFont.truetype('DejaVuSans-Bold.ttf',n)
-base = Image.open(ROOT/'sources/case-fluffy-base.png').convert('RGBA')
+base = Image.open(ROOT/'sources/case-3d-base.png').convert('RGBA')
 # Identical base transform leaves clear upper and lower right badge zones.
 base = base.crop(base.getbbox()).resize((410,410),Image.Resampling.LANCZOS)
 colors = {'success':'#24984c','failure':'#dc343d','question':'#dc343d','urgent':'#dc343d','review':'#237bd1','reminder':'#237bd1','blocked':'#c93c32'}

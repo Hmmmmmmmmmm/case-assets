@@ -5,7 +5,7 @@
       256,
       256
     ],
-    "bytes": 57039
+    "bytes": 55023
   },
   {
     "file": "logos/256/case-failure.png",
@@ -13,7 +13,7 @@
       256,
       256
     ],
-    "bytes": 61570
+    "bytes": 59512
   },
   {
     "file": "logos/256/case-info.png",
@@ -21,7 +21,7 @@
       256,
       256
     ],
-    "bytes": 57496
+    "bytes": 55137
   },
   {
     "file": "logos/256/case-question.png",
@@ -29,7 +29,7 @@
       256,
       256
     ],
-    "bytes": 64251
+    "bytes": 61971
   },
   {
     "file": "logos/256/case-reminder.png",
@@ -37,7 +37,7 @@
       256,
       256
     ],
-    "bytes": 71871
+    "bytes": 69725
   },
   {
     "file": "logos/256/case-review.png",
@@ -45,7 +45,7 @@
       256,
       256
     ],
-    "bytes": 60518
+    "bytes": 58115
   },
   {
     "file": "logos/256/case-success.png",
@@ -53,7 +53,7 @@
       256,
       256
     ],
-    "bytes": 60760
+    "bytes": 58682
   },
   {
     "file": "logos/256/case-urgent.png",
@@ -61,7 +61,7 @@
       256,
       256
     ],
-    "bytes": 60894
+    "bytes": 58566
   },
   {
     "file": "logos/case-blocked.png",
@@ -69,7 +69,7 @@
       512,
       512
     ],
-    "bytes": 177655
+    "bytes": 177159
   },
   {
     "file": "logos/case-failure.png",
@@ -77,7 +77,7 @@
       512,
       512
     ],
-    "bytes": 185735
+    "bytes": 184639
   },
   {
     "file": "logos/case-info.png",
@@ -85,7 +85,7 @@
       512,
       512
     ],
-    "bytes": 189422
+    "bytes": 188969
   },
   {
     "file": "logos/case-question.png",
@@ -93,7 +93,7 @@
       512,
       512
     ],
-    "bytes": 204913
+    "bytes": 204432
   },
   {
     "file": "logos/case-reminder.png",
@@ -101,7 +101,7 @@
       512,
       512
     ],
-    "bytes": 216877
+    "bytes": 217227
   },
   {
     "file": "logos/case-review.png",
@@ -109,7 +109,7 @@
       512,
       512
     ],
-    "bytes": 195301
+    "bytes": 194610
   },
   {
     "file": "logos/case-success.png",
@@ -117,7 +117,7 @@
       512,
       512
     ],
-    "bytes": 184912
+    "bytes": 183744
   },
   {
     "file": "logos/case-urgent.png",
@@ -125,6 +125,6 @@
       512,
       512
     ],
-    "bytes": 195436
+    "bytes": 194839
   }
 ]
