@@ -9,9 +9,9 @@ FONT = '/System/Library/Fonts/Supplemental/Arial Bold.ttf'
 def font(n):
     try: return ImageFont.truetype(FONT,n)
     except OSError: return ImageFont.truetype('DejaVuSans-Bold.ttf',n)
-base = Image.open(ROOT/'sources/case-original.png').convert('RGBA')
+base = Image.open(ROOT/'sources/case-fluffy-base.png').convert('RGBA')
 # Identical base transform leaves clear upper and lower right badge zones.
-base = base.resize((410,410),Image.Resampling.LANCZOS)
+base = base.crop(base.getbbox()).resize((410,410),Image.Resampling.LANCZOS)
 colors = {'success':'#24984c','failure':'#dc343d','question':'#dc343d','urgent':'#dc343d','review':'#237bd1','reminder':'#237bd1','blocked':'#c93c32'}
 masters=[]
 for name in NAMES:
@@ -27,25 +27,41 @@ for name in NAMES:
         d.line((153,174,180,186),fill=ink,width=5); d.line((262,186,288,174),fill=ink,width=5)
     if name=='question': d.line((266,168,292,162),fill=ink,width=5)
     if name!='info':
+        # Supersampled cartoon markers: thick dark contour and white sticker edge.
+        scale=3
+        badge=Image.new('RGBA',(216*scale,216*scale))
+        bd=ImageDraw.Draw(badge)
+        def pts(seq): return [(int(x*scale),int(y*scale)) for x,y in seq]
+        def line(seq,fill,width): bd.line(pts(seq),fill=fill,width=width*scale,joint='curve')
         col=colors[name]
-        if name in ('success','failure','blocked'):
-            box=(354,354,498,498)
-            if name=='blocked':
-                cx=cy=426; r=73
-                points=[(cx+r*math.cos(math.radians(22.5+k*45)),cy+r*math.sin(math.radians(22.5+k*45))) for k in range(8)]
-                d.polygon(points,fill=col,outline='white',width=5)
-                d.text((426,426),'BLOCKED',font=font(25),anchor='mm',fill='white',stroke_width=0)
+        if name in ('success','failure','reminder'):
+            bd.ellipse((8*scale,8*scale,208*scale,208*scale),fill=ink)
+            bd.ellipse((16*scale,16*scale,200*scale,200*scale),fill=col)
+            if name=='success':
+                points=[(49,106),(89,143),(166,65)]
+                line(points,ink,26); line(points,'white',15)
+            elif name=='failure':
+                for points in [[(66,65),(151,151)],[(151,65),(66,151)]]:
+                    line(points,ink,26); line(points,'white',15)
             else:
-                d.ellipse(box,fill=col,outline='white',width=5)
-                if name=='success': d.line([(385,424),(416,451),(467,397)],fill='white',width=14,joint='curve')
-                else:
-                    d.line((394,394,458,458),fill='white',width=14); d.line((458,394,394,458),fill='white',width=14)
-        elif name=='reminder':
-            d.ellipse((354,16,498,160),fill=col,outline='white',width=5)
-            d.ellipse((378,40,474,136),outline='white',width=8)
-            d.line([(426,57),(426,88),(452,104)],fill='white',width=9,joint='curve')
+                bd.ellipse((42*scale,42*scale,174*scale,174*scale),outline=ink,width=16*scale)
+                bd.ellipse((42*scale,42*scale,174*scale,174*scale),outline='white',width=8*scale)
+                line([(108,65),(108,108),(140,129)],ink,20)
+                line([(108,65),(108,108),(140,129)],'white',10)
+        elif name=='blocked':
+            vertices=[(108+101*math.cos(math.radians(22.5+k*45)),108+101*math.sin(math.radians(22.5+k*45))) for k in range(8)]
+            bd.polygon(pts(vertices),fill=col,outline=ink,width=8*scale)
+            bd.text((108*scale,108*scale),'BLOCKED',font=font(35*scale),anchor='mm',fill='white',stroke_width=1*scale,stroke_fill=ink)
         else:
-            d.text((426,88),'?' if name=='question' else '!',font=font(151),anchor='mm',fill=col,stroke_width=3,stroke_fill='white')
+            bd.text((108*scale,103*scale),'?' if name=='question' else '!',font=font(225*scale),anchor='mm',fill=col,stroke_width=5*scale,stroke_fill=ink)
+        # A white contour follows the marker itself; no rectangular background.
+        from PIL import ImageFilter
+        alpha=badge.getchannel('A')
+        border=alpha.filter(ImageFilter.MaxFilter(25))
+        sticker=Image.new('RGBA',badge.size,'white'); sticker.putalpha(border)
+        sticker.alpha_composite(badge)
+        sticker=sticker.resize((216,216),Image.Resampling.LANCZOS)
+        im.alpha_composite(sticker,(292,292) if name in ('success','failure','blocked') else (292,0))
     im.save(ROOT/f'logos/case-{name}.png',optimize=True)
     im.resize((256,256),Image.Resampling.LANCZOS).save(ROOT/f'logos/256/case-{name}.png',optimize=True)
     masters.append(im)
