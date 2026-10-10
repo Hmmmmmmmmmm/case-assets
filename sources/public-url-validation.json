@@ -1,111 +1,175 @@
 [
   {
     "url": "https://raw.githubusercontent.com/Hmmmmmmmmmm/case-assets/main/logos/case-blocked.png",
-    "status": 200,
-    "content_type": "image/png",
-    "sha256_matches": true,
-    "valid_png": true
+    "error": "Remote PNG differs from current local asset (CDN cache may be stale)"
   },
   {
     "url": "https://raw.githubusercontent.com/Hmmmmmmmmmm/case-assets/main/logos/case-failure.png",
-    "status": 200,
-    "content_type": "image/png",
-    "sha256_matches": true,
-    "valid_png": true
+    "error": "Remote PNG differs from current local asset (CDN cache may be stale)"
   },
   {
     "url": "https://raw.githubusercontent.com/Hmmmmmmmmmm/case-assets/main/logos/case-info.png",
-    "status": 200,
-    "content_type": "image/png",
-    "sha256_matches": true,
-    "valid_png": true
+    "error": "Remote PNG differs from current local asset (CDN cache may be stale)"
   },
   {
     "url": "https://raw.githubusercontent.com/Hmmmmmmmmmm/case-assets/main/logos/case-question.png",
-    "status": 200,
-    "content_type": "image/png",
-    "sha256_matches": true,
-    "valid_png": true
+    "error": "Remote PNG differs from current local asset (CDN cache may be stale)"
   },
   {
     "url": "https://raw.githubusercontent.com/Hmmmmmmmmmm/case-assets/main/logos/case-reminder.png",
-    "status": 200,
-    "content_type": "image/png",
-    "sha256_matches": true,
-    "valid_png": true
+    "error": "Remote PNG differs from current local asset (CDN cache may be stale)"
   },
   {
     "url": "https://raw.githubusercontent.com/Hmmmmmmmmmm/case-assets/main/logos/case-review.png",
-    "status": 200,
-    "content_type": "image/png",
-    "sha256_matches": true,
-    "valid_png": true
+    "error": "Remote PNG differs from current local asset (CDN cache may be stale)"
   },
   {
     "url": "https://raw.githubusercontent.com/Hmmmmmmmmmm/case-assets/main/logos/case-success.png",
-    "status": 200,
-    "content_type": "image/png",
-    "sha256_matches": true,
-    "valid_png": true
+    "error": "Remote PNG differs from current local asset (CDN cache may be stale)"
   },
   {
     "url": "https://raw.githubusercontent.com/Hmmmmmmmmmm/case-assets/main/logos/case-urgent.png",
-    "status": 200,
-    "content_type": "image/png",
-    "sha256_matches": true,
-    "valid_png": true
+    "error": "Remote PNG differs from current local asset (CDN cache may be stale)"
   },
   {
     "url": "https://cdn.jsdelivr.net/gh/Hmmmmmmmmmm/case-assets@main/logos/case-blocked.png",
-    "status": 200,
-    "content_type": "image/png",
-    "sha256_matches": true,
-    "valid_png": true
+    "error": "Remote PNG differs from current local asset (CDN cache may be stale)"
   },
   {
     "url": "https://cdn.jsdelivr.net/gh/Hmmmmmmmmmm/case-assets@main/logos/case-failure.png",
-    "status": 200,
-    "content_type": "image/png",
-    "sha256_matches": true,
-    "valid_png": true
+    "error": "Remote PNG differs from current local asset (CDN cache may be stale)"
   },
   {
     "url": "https://cdn.jsdelivr.net/gh/Hmmmmmmmmmm/case-assets@main/logos/case-info.png",
-    "status": 200,
-    "content_type": "image/png",
-    "sha256_matches": true,
-    "valid_png": true
+    "error": "Remote PNG differs from current local asset (CDN cache may be stale)"
   },
   {
     "url": "https://cdn.jsdelivr.net/gh/Hmmmmmmmmmm/case-assets@main/logos/case-question.png",
-    "status": 200,
-    "content_type": "image/png",
-    "sha256_matches": true,
-    "valid_png": true
+    "error": "Remote PNG differs from current local asset (CDN cache may be stale)"
   },
   {
     "url": "https://cdn.jsdelivr.net/gh/Hmmmmmmmmmm/case-assets@main/logos/case-reminder.png",
-    "status": 200,
-    "content_type": "image/png",
-    "sha256_matches": true,
-    "valid_png": true
+    "error": "Remote PNG differs from current local asset (CDN cache may be stale)"
   },
   {
     "url": "https://cdn.jsdelivr.net/gh/Hmmmmmmmmmm/case-assets@main/logos/case-review.png",
-    "status": 200,
-    "content_type": "image/png",
-    "sha256_matches": true,
-    "valid_png": true
+    "error": "Remote PNG differs from current local asset (CDN cache may be stale)"
   },
   {
     "url": "https://cdn.jsdelivr.net/gh/Hmmmmmmmmmm/case-assets@main/logos/case-success.png",
+    "error": "Remote PNG differs from current local asset (CDN cache may be stale)"
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/gh/Hmmmmmmmmmm/case-assets@main/logos/case-urgent.png",
+    "error": "Remote PNG differs from current local asset (CDN cache may be stale)"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/Hmmmmmmmmmm/case-assets/30ad4ef640bafcd95e33e06b3d7d6e427a696569/logos/case-blocked.png",
     "status": 200,
     "content_type": "image/png",
     "sha256_matches": true,
     "valid_png": true
   },
   {
-    "url": "https://cdn.jsdelivr.net/gh/Hmmmmmmmmmm/case-assets@main/logos/case-urgent.png",
+    "url": "https://raw.githubusercontent.com/Hmmmmmmmmmm/case-assets/30ad4ef640bafcd95e33e06b3d7d6e427a696569/logos/case-failure.png",
+    "status": 200,
+    "content_type": "image/png",
+    "sha256_matches": true,
+    "valid_png": true
+  },
+  {
+    "url": "https://raw.githubusercontent.com/Hmmmmmmmmmm/case-assets/30ad4ef640bafcd95e33e06b3d7d6e427a696569/logos/case-info.png",
+    "status": 200,
+    "content_type": "image/png",
+    "sha256_matches": true,
+    "valid_png": true
+  },
+  {
+    "url": "https://raw.githubusercontent.com/Hmmmmmmmmmm/case-assets/30ad4ef640bafcd95e33e06b3d7d6e427a696569/logos/case-question.png",
+    "status": 200,
+    "content_type": "image/png",
+    "sha256_matches": true,
+    "valid_png": true
+  },
+  {
+    "url": "https://raw.githubusercontent.com/Hmmmmmmmmmm/case-assets/30ad4ef640bafcd95e33e06b3d7d6e427a696569/logos/case-reminder.png",
+    "status": 200,
+    "content_type": "image/png",
+    "sha256_matches": true,
+    "valid_png": true
+  },
+  {
+    "url": "https://raw.githubusercontent.com/Hmmmmmmmmmm/case-assets/30ad4ef640bafcd95e33e06b3d7d6e427a696569/logos/case-review.png",
+    "status": 200,
+    "content_type": "image/png",
+    "sha256_matches": true,
+    "valid_png": true
+  },
+  {
+    "url": "https://raw.githubusercontent.com/Hmmmmmmmmmm/case-assets/30ad4ef640bafcd95e33e06b3d7d6e427a696569/logos/case-success.png",
+    "status": 200,
+    "content_type": "image/png",
+    "sha256_matches": true,
+    "valid_png": true
+  },
+  {
+    "url": "https://raw.githubusercontent.com/Hmmmmmmmmmm/case-assets/30ad4ef640bafcd95e33e06b3d7d6e427a696569/logos/case-urgent.png",
+    "status": 200,
+    "content_type": "image/png",
+    "sha256_matches": true,
+    "valid_png": true
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/gh/Hmmmmmmmmmm/case-assets@30ad4ef640bafcd95e33e06b3d7d6e427a696569/logos/case-blocked.png",
+    "status": 200,
+    "content_type": "image/png",
+    "sha256_matches": true,
+    "valid_png": true
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/gh/Hmmmmmmmmmm/case-assets@30ad4ef640bafcd95e33e06b3d7d6e427a696569/logos/case-failure.png",
+    "status": 200,
+    "content_type": "image/png",
+    "sha256_matches": true,
+    "valid_png": true
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/gh/Hmmmmmmmmmm/case-assets@30ad4ef640bafcd95e33e06b3d7d6e427a696569/logos/case-info.png",
+    "status": 200,
+    "content_type": "image/png",
+    "sha256_matches": true,
+    "valid_png": true
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/gh/Hmmmmmmmmmm/case-assets@30ad4ef640bafcd95e33e06b3d7d6e427a696569/logos/case-question.png",
+    "status": 200,
+    "content_type": "image/png",
+    "sha256_matches": true,
+    "valid_png": true
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/gh/Hmmmmmmmmmm/case-assets@30ad4ef640bafcd95e33e06b3d7d6e427a696569/logos/case-reminder.png",
+    "status": 200,
+    "content_type": "image/png",
+    "sha256_matches": true,
+    "valid_png": true
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/gh/Hmmmmmmmmmm/case-assets@30ad4ef640bafcd95e33e06b3d7d6e427a696569/logos/case-review.png",
+    "status": 200,
+    "content_type": "image/png",
+    "sha256_matches": true,
+    "valid_png": true
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/gh/Hmmmmmmmmmm/case-assets@30ad4ef640bafcd95e33e06b3d7d6e427a696569/logos/case-success.png",
+    "status": 200,
+    "content_type": "image/png",
+    "sha256_matches": true,
+    "valid_png": true
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/gh/Hmmmmmmmmmm/case-assets@30ad4ef640bafcd95e33e06b3d7d6e427a696569/logos/case-urgent.png",
     "status": 200,
     "content_type": "image/png",
     "sha256_matches": true,
