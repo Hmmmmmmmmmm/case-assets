@@ -1,0 +1,130 @@
+[
+  {
+    "file": "logos/256/case-blocked.png",
+    "size": [
+      256,
+      256
+    ],
+    "bytes": 43531
+  },
+  {
+    "file": "logos/256/case-failure.png",
+    "size": [
+      256,
+      256
+    ],
+    "bytes": 44399
+  },
+  {
+    "file": "logos/256/case-info.png",
+    "size": [
+      256,
+      256
+    ],
+    "bytes": 40714
+  },
+  {
+    "file": "logos/256/case-question.png",
+    "size": [
+      256,
+      256
+    ],
+    "bytes": 44307
+  },
+  {
+    "file": "logos/256/case-reminder.png",
+    "size": [
+      256,
+      256
+    ],
+    "bytes": 47803
+  },
+  {
+    "file": "logos/256/case-review.png",
+    "size": [
+      256,
+      256
+    ],
+    "bytes": 42199
+  },
+  {
+    "file": "logos/256/case-success.png",
+    "size": [
+      256,
+      256
+    ],
+    "bytes": 44946
+  },
+  {
+    "file": "logos/256/case-urgent.png",
+    "size": [
+      256,
+      256
+    ],
+    "bytes": 42922
+  },
+  {
+    "file": "logos/case-blocked.png",
+    "size": [
+      512,
+      512
+    ],
+    "bytes": 113735
+  },
+  {
+    "file": "logos/case-failure.png",
+    "size": [
+      512,
+      512
+    ],
+    "bytes": 111392
+  },
+  {
+    "file": "logos/case-info.png",
+    "size": [
+      512,
+      512
+    ],
+    "bytes": 114481
+  },
+  {
+    "file": "logos/case-question.png",
+    "size": [
+      512,
+      512
+    ],
+    "bytes": 118023
+  },
+  {
+    "file": "logos/case-reminder.png",
+    "size": [
+      512,
+      512
+    ],
+    "bytes": 115874
+  },
+  {
+    "file": "logos/case-review.png",
+    "size": [
+      512,
+      512
+    ],
+    "bytes": 115169
+  },
+  {
+    "file": "logos/case-success.png",
+    "size": [
+      512,
+      512
+    ],
+    "bytes": 111258
+  },
+  {
+    "file": "logos/case-urgent.png",
+    "size": [
+      512,
+      512
+    ],
+    "bytes": 115593
+  }
+]

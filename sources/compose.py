@@ -1,0 +1,66 @@
+"""Rebuild icons: python3 sources/compose.py. Requires Pillow >= 11."""
+from pathlib import Path
+from PIL import Image, ImageDraw, ImageFont
+import math, json
+
+ROOT = Path(__file__).resolve().parents[1]
+NAMES = ['info','success','failure','question','urgent','review','reminder','blocked']
+FONT = '/System/Library/Fonts/Supplemental/Arial Bold.ttf'
+def font(n):
+    try: return ImageFont.truetype(FONT,n)
+    except OSError: return ImageFont.truetype('DejaVuSans-Bold.ttf',n)
+base = Image.open(ROOT/'sources/case-original.png').convert('RGBA')
+# Identical base transform leaves clear upper and lower right badge zones.
+base = base.resize((410,410),Image.Resampling.LANCZOS)
+colors = {'success':'#24984c','failure':'#dc343d','question':'#dc343d','urgent':'#dc343d','review':'#237bd1','reminder':'#237bd1','blocked':'#c93c32'}
+masters=[]
+for name in NAMES:
+    im=Image.new('RGBA',(512,512)); im.alpha_composite(base,(18,70))
+    d=ImageDraw.Draw(im)
+    ink='#252525'
+    # Small mouths and eyebrows retain original eyes, glasses, body and bow tie.
+    if name=='success': d.arc((183,316,255,351),0,180,fill=ink,width=7)
+    elif name in ('failure','blocked'): d.arc((183,336,255,365),180,360,fill=ink,width=6)
+    elif name in ('urgent','question'): d.ellipse((212,327,229,348),outline=ink,width=5)
+    elif name in ('review','reminder'): d.line((208,342,233,342),fill=ink,width=5)
+    if name in ('urgent','blocked'):
+        d.line((153,174,180,186),fill=ink,width=5); d.line((262,186,288,174),fill=ink,width=5)
+    if name=='question': d.line((266,168,292,162),fill=ink,width=5)
+    if name!='info':
+        col=colors[name]
+        if name in ('success','failure','blocked'):
+            box=(354,354,498,498)
+            if name=='blocked':
+                cx=cy=426; r=73
+                points=[(cx+r*math.cos(math.radians(22.5+k*45)),cy+r*math.sin(math.radians(22.5+k*45))) for k in range(8)]
+                d.polygon(points,fill=col,outline='white',width=5)
+                d.text((426,426),'BLOCKED',font=font(25),anchor='mm',fill='white',stroke_width=0)
+            else:
+                d.ellipse(box,fill=col,outline='white',width=5)
+                if name=='success': d.line([(385,424),(416,451),(467,397)],fill='white',width=14,joint='curve')
+                else:
+                    d.line((394,394,458,458),fill='white',width=14); d.line((458,394,394,458),fill='white',width=14)
+        elif name=='reminder':
+            d.ellipse((354,16,498,160),fill=col,outline='white',width=5)
+            d.ellipse((378,40,474,136),outline='white',width=8)
+            d.line([(426,57),(426,88),(452,104)],fill='white',width=9,joint='curve')
+        else:
+            d.text((426,88),'?' if name=='question' else '!',font=font(151),anchor='mm',fill=col,stroke_width=3,stroke_fill='white')
+    im.save(ROOT/f'logos/case-{name}.png',optimize=True)
+    im.resize((256,256),Image.Resampling.LANCZOS).save(ROOT/f'logos/256/case-{name}.png',optimize=True)
+    masters.append(im)
+sheet=Image.new('RGB',(1024,620),'#f0f2f5'); sd=ImageDraw.Draw(sheet)
+for i,(name,im) in enumerate(zip(NAMES,masters)):
+    x=(i%4)*256; y=(i//4)*310
+    sheet.paste(im.resize((240,240),Image.Resampling.LANCZOS),(x+8,y+5),im.resize((240,240),Image.Resampling.LANCZOS))
+    sd.text((x+128,y+264),name,font=font(22),anchor='mm',fill='#222222')
+    small=im.resize((64,64),Image.Resampling.LANCZOS)
+    sheet.paste(small,(x+184,y+240),small)
+sheet.save(ROOT/'previews/case-icon-contact-sheet.png',optimize=True)
+results=[]
+for p in sorted((ROOT/'logos').rglob('*.png')):
+    im=Image.open(p); im.verify(); im=Image.open(p)
+    assert im.mode=='RGBA' and im.size in [(512,512),(256,256)]
+    assert im.getpixel((0,0))[3]==0
+    results.append({'file':str(p.relative_to(ROOT)),'size':im.size,'bytes':p.stat().st_size})
+(ROOT/'sources/validation.json').write_text(json.dumps(results,indent=2)+'\n')
